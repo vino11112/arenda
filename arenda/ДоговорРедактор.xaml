@@ -1,0 +1,80 @@
+﻿<Window x:Class="arenda.ДоговорРедактор"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:arenda"
+        mc:Ignorable="d"
+         Title="Редактор договора" 
+        Height="550" Width="550"
+        MinHeight="550" MinWidth="550"
+        WindowStartupLocation="CenterScreen">
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" MinWidth="150"/>
+            <ColumnDefinition Width="*" MinWidth="250"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Недвижимость -->
+        <Label Content="Недвижимость:" Grid.Row="0" Grid.Column="0"
+               VerticalAlignment="Center" Margin="0,0,10,5"/>
+        <ComboBox x:Name="НедвижимостьCombo" Grid.Row="0" Grid.Column="1"
+                  DisplayMemberPath="Адрес" Margin="0,0,0,5" Height="25"/>
+
+        <!-- Арендатор -->
+        <Label Content="Арендатор:" Grid.Row="1" Grid.Column="0"
+               VerticalAlignment="Center" Margin="0,0,10,5"/>
+        <ComboBox x:Name="АрендаторCombo" Grid.Row="1" Grid.Column="1"
+                  DisplayMemberPath="ФИО" Margin="0,0,0,5" Height="25"/>
+
+        <!-- Даты -->
+        <Label Content="Дата начала:" Grid.Row="2" Grid.Column="0"
+               VerticalAlignment="Center" Margin="0,0,10,5"/>
+        <DatePicker x:Name="ДатаНачалаPicker" Grid.Row="2" Grid.Column="1"
+                    Margin="0,0,0,5" Height="25"/>
+
+        <Label Content="Дата окончания:" Grid.Row="3" Grid.Column="0"
+               VerticalAlignment="Center" Margin="0,0,10,5"/>
+        <DatePicker x:Name="ДатаОкончанияPicker" Grid.Row="3" Grid.Column="1"
+                    Margin="0,0,0,5" Height="25"/>
+
+        <!-- Платежи -->
+        <Label Content="Ежемесячная плата:" Grid.Row="4" Grid.Column="0"
+               VerticalAlignment="Center" Margin="0,0,10,5"/>
+        <TextBox x:Name="ПлатаText" Grid.Row="4" Grid.Column="1"
+                 Margin="0,0,0,5" Height="25"/>
+
+        <Label Content="Залог:" Grid.Row="5" Grid.Column="0"
+               VerticalAlignment="Center" Margin="0,0,10,5"/>
+        <TextBox x:Name="ЗалогText" Grid.Row="5" Grid.Column="1"
+                 Margin="0,0,0,5" Height="25"/>
+
+        <!-- Условия -->
+        <Label Content="Доп. условия:" Grid.Row="6" Grid.Column="0"
+               VerticalAlignment="Top" Margin="0,5,10,5"/>
+        <TextBox x:Name="УсловияText" Grid.Row="6" Grid.Column="1"
+                 Margin="0,0,0,5" Height="100" VerticalScrollBarVisibility="Auto"
+                 TextWrapping="Wrap" AcceptsReturn="True"/>
+
+        <!-- Кнопки -->
+        <StackPanel Grid.Row="8" Grid.ColumnSpan="2" 
+                    Orientation="Horizontal" HorizontalAlignment="Right"
+                    Margin="0,15,0,0">
+            <Button Content="Сохранить" Width="100" Margin="5,0" 
+                    Click="OK_Click" IsDefault="True"/>
+            <Button Content="Отмена" Width="100" Margin="5,0" 
+                    Click="Cancel_Click" IsCancel="True"/>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,89 @@
+﻿<Window x:Class="arenda.НедвижимостьРедактор"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:arenda"
+        mc:Ignorable="d"
+       Title="Редактор недвижимости" 
+        Height="600" Width="550"
+        MinHeight="600" MinWidth="550"
+        WindowStartupLocation="CenterScreen">
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" MinWidth="120"/>
+            <ColumnDefinition Width="*" MinWidth="200"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Владелец -->
+        <Label Content="Владелец:" Grid.Row="0" Grid.Column="0"
+               VerticalAlignment="Center" Margin="0,0,10,5"/>
+        <ComboBox x:Name="ВладелецCombo" Grid.Row="0" Grid.Column="1"
+                  DisplayMemberPath="ФИО" Margin="0,0,0,5" Height="25"/>
+
+        <!-- Тип недвижимости -->
+        <Label Content="Тип недвижимости:" Grid.Row="1" Grid.Column="0"
+               VerticalAlignment="Center" Margin="0,0,10,5"/>
+        <ComboBox x:Name="ТипCombo" Grid.Row="1" Grid.Column="1"
+                  DisplayMemberPath="НазваниеТипа" Margin="0,0,0,5" Height="25"/>
+
+        <!-- Адрес -->
+        <Label Content="Адрес:" Grid.Row="2" Grid.Column="0"
+               VerticalAlignment="Center" Margin="0,0,10,5"/>
+        <TextBox x:Name="АдресText" Grid.Row="2" Grid.Column="1"
+                 Margin="0,0,0,5" Height="25"/>
+
+        <!-- Площадь -->
+        <Label Content="Площадь (кв.м):" Grid.Row="3" Grid.Column="0"
+               VerticalAlignment="Center" Margin="0,0,10,5"/>
+        <TextBox x:Name="ПлощадьText" Grid.Row="3" Grid.Column="1"
+                 Margin="0,0,0,5" Height="25"/>
+
+        <!-- Количество комнат -->
+        <Label Content="Количество комнат:" Grid.Row="4" Grid.Column="0"
+               VerticalAlignment="Center" Margin="0,0,10,5"/>
+        <TextBox x:Name="КомнатыText" Grid.Row="4" Grid.Column="1"
+                 Margin="0,0,0,5" Height="25"/>
+
+        <!-- Этаж -->
+        <Label Content="Этаж:" Grid.Row="5" Grid.Column="0"
+               VerticalAlignment="Center" Margin="0,0,10,5"/>
+        <TextBox x:Name="ЭтажText" Grid.Row="5" Grid.Column="1"
+                 Margin="0,0,0,5" Height="25"/>
+
+        <!-- Цена -->
+        <Label Content="Цена:" Grid.Row="6" Grid.Column="0"
+               VerticalAlignment="Center" Margin="0,0,10,5"/>
+        <TextBox x:Name="ЦенаText" Grid.Row="6" Grid.Column="1"
+                 Margin="0,0,0,5" Height="25"/>
+
+        <!-- Описание -->
+        <Label Content="Описание:" Grid.Row="7" Grid.Column="0"
+               VerticalAlignment="Top" Margin="0,5,10,5"/>
+        <TextBox x:Name="ОписаниеText" Grid.Row="7" Grid.Column="1"
+                 Margin="0,0,0,5" Height="80" VerticalScrollBarVisibility="Auto"
+                 TextWrapping="Wrap" AcceptsReturn="True"/>
+
+        <!-- Кнопки -->
+        <StackPanel Grid.Row="9" Grid.ColumnSpan="2" 
+                    Orientation="Horizontal" HorizontalAlignment="Right"
+                    Margin="0,15,0,0">
+            <Button Content="Сохранить" Width="100" Margin="5,0" 
+                    Click="OK_Click" IsDefault="True"/>
+            <Button Content="Отмена" Width="100" Margin="5,0" 
+                    Click="Cancel_Click" IsCancel="True"/>
+        </StackPanel>
+    </Grid>
+</Window>

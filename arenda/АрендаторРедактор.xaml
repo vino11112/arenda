@@ -1,0 +1,45 @@
+﻿<Window x:Class="arenda.АрендаторРедактор"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:arenda"
+        mc:Ignorable="d"
+        Title="Добавление арендатора" Height="400" Width="450">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Label Content="Фамилия:" Grid.Row="0"/>
+        <TextBox x:Name="ФамилияText" Grid.Row="1"/>
+
+        <Label Content="Имя:" Grid.Row="2"/>
+        <TextBox x:Name="ИмяText" Grid.Row="3"/>
+
+        <Label Content="Отчество:" Grid.Row="4"/>
+        <TextBox x:Name="ОтчествоText" Grid.Row="5"/>
+
+        <Label Content="Телефон:" Grid.Row="6"/>
+        <TextBox x:Name="ТелефонText" Grid.Row="7" Margin="0,0,0,213"/>
+
+        <Label Content="Электронная почта:" Grid.Row="7" Margin="0,78,0,0" Height="26" VerticalAlignment="Top"/>
+        <TextBox x:Name="EmailText" Grid.Row="7" Margin="0,109,0,88"/>
+
+        <Label Content="Паспортные данные:" Grid.Row="7" Margin="0,23,0,188"/>
+        <TextBox x:Name="ПаспортText" Grid.Row="7" Margin="0,48,0,158"/>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Row="7" Margin="0,154,-18,50" Width="208">
+            <Button Content="OK" Width="80" Margin="5" Click="OK_Click" IsDefault="True"/>
+            <Button Content="Отмена" Width="80" Margin="5" Click="Cancel_Click" IsCancel="True"/>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,95 @@
+﻿<Window x:Class="arenda.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:arenda"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <TabControl>
+            <TabItem Header="Недвижимость">
+                <Grid>
+                    <DataGrid x:Name="НедвижимостьGrid" AutoGenerateColumns="False" Margin="10" 
+                              SelectionMode="Single" SelectionUnit="FullRow" IsReadOnly="True">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="ID" Binding="{Binding id_недвижимости}" Width="Auto"/>
+                            <DataGridTextColumn Header="Адрес" Binding="{Binding Адрес}" Width="*"/>
+                            <DataGridTextColumn Header="Тип" Binding="{Binding НазваниеТипа}" Width="Auto"/>
+                            <DataGridTextColumn Header="Площадь" Binding="{Binding Площадь}" Width="Auto"/>
+                            <DataGridTextColumn Header="Комнат" Binding="{Binding КоличествоКомнат}" Width="Auto"/>
+                            <DataGridTextColumn Header="Статус" Binding="{Binding НазваниеСтатуса}" Width="Auto"/>
+                            <DataGridTextColumn Header="Цена" Binding="{Binding Цена}" Width="Auto"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10">
+                        <Button Content="Добавить" Width="100" Margin="5" Click="ДобавитьНедвижимость_Click"/>
+                        <Button Content="Редактировать" Width="100" Margin="5" Click="РедактироватьНедвижимость_Click"/>
+                        <Button Content="Удалить" Width="100" Margin="5" Click="УдалитьНедвижимость_Click"/>
+                        <Button Content="Обновить" Width="100" Margin="5" Click="ОбновитьДанные_Click"/>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="Арендаторы">
+                <Grid>
+                    <DataGrid x:Name="АрендаторыGrid" AutoGenerateColumns="False" Margin="10" IsReadOnly="True">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="ID" Binding="{Binding id_арендатора}"/>
+                            <DataGridTextColumn Header="Фамилия" Binding="{Binding Фамилия}"/>
+                            <DataGridTextColumn Header="Имя" Binding="{Binding Имя}"/>
+                            <DataGridTextColumn Header="Отчество" Binding="{Binding Отчество}"/>
+                            <DataGridTextColumn Header="Телефон" Binding="{Binding Телефон}"/>
+                            <DataGridTextColumn Header="Email" Binding="{Binding ЭлектроннаяПочта}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10">
+                        <Button Content="Добавить" Width="100" Margin="5" Click="ДобавитьАрендатора_Click"/>
+                        <Button Content="Редактировать" Width="100" Margin="5" Click="РедактироватьАрендатора_Click"/>
+                        <Button Content="Удалить" Width="100" Margin="5" Click="УдалитьАрендатора_Click"/>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="Договоры">
+                <Grid>
+                    <DataGrid x:Name="ДоговорыGrid" AutoGenerateColumns="False" Margin="10" IsReadOnly="True">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="ID" Binding="{Binding id_договора}"/>
+                            <DataGridTextColumn Header="Адрес" Binding="{Binding Адрес}"/>
+                            <DataGridTextColumn Header="Арендатор" Binding="{Binding АрендаторФИО}"/>
+                            <DataGridTextColumn Header="Начало" Binding="{Binding ДатаНачала, StringFormat=\{0:dd.MM.yyyy\}}"/>
+                            <DataGridTextColumn Header="Окончание" Binding="{Binding ДатаОкончания, StringFormat=\{0:dd.MM.yyyy\}}"/>
+                            <DataGridTextColumn Header="Аренда" Binding="{Binding ЕжемесячнаяПлата}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10">
+                        <Button Content="Добавить" Width="100" Margin="5" Click="ДобавитьДоговор_Click"/>
+                        <Button Content="Редактировать" Width="100" Margin="5" Click="РедактироватьДоговор_Click"/>
+                        <Button Content="Удалить" Width="100" Margin="5" Click="УдалитьДоговор_Click"/>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="Платежи">
+                <Grid>
+                    <DataGrid x:Name="ПлатежиGrid" AutoGenerateColumns="False" Margin="10" IsReadOnly="True">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="ID" Binding="{Binding id_платежа}"/>
+                            <DataGridTextColumn Header="Дата" Binding="{Binding ДатаПлатежа, StringFormat=\{0:dd.MM.yyyy\}}"/>
+                            <DataGridTextColumn Header="Сумма" Binding="{Binding Сумма}"/>
+                            <DataGridTextColumn Header="Тип" Binding="{Binding НазваниеТипа}"/>
+                            <DataGridTextColumn Header="Статус" Binding="{Binding НазваниеСтатуса}"/>
+                            <DataGridTextColumn Header="Описание" Binding="{Binding Описание}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10">
+                        <Button Content="Добавить" Width="100" Margin="5" Click="ДобавитьПлатеж_Click"/>
+                        <Button Content="Редактировать" Width="100" Margin="5" Click="РедактироватьПлатеж_Click"/>
+                        <Button Content="Удалить" Width="100" Margin="5" Click="УдалитьПлатеж_Click"/>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
